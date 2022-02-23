@@ -27,25 +27,25 @@ const Nav = () => {
               {NavMenu.map((item, id) => {
                 return (
                   <li key={id}>
-                    <a href={item.linkto}>{item.name}</a>
+                    <MenuContents href={item.linkto}>{item.name}</MenuContents>
                   </li>
                 );
               })}
             </MenuSubTitle>
             <aside>
-              <ul>
+              <AsideUl>
                 <li>
-                  <button>
+                  <ReadingGlassesButton>
                     <img src="/images/돋보기.png" width="18px" height="18px" />
-                  </button>
+                  </ReadingGlassesButton>
                 </li>
                 <li>
-                  <button>회원가입/로그인</button>
+                  <SignupButton>회원가입/로그인</SignupButton>
                 </li>
                 <li>
-                  <a href="/">기업 서비스</a>
+                  <ServiceButton href="/">기업 서비스</ServiceButton>
                 </li>
-              </ul>
+              </AsideUl>
             </aside>
           </NavInner>
         </NavBar>
@@ -57,11 +57,17 @@ const Nav = () => {
 export default Nav;
 
 const Wrapper = styled.div`
+  width: 100%;
   position: fixed;
+  border-bottom: 1px solid #dddd;
+  z-index: 100;
+  padding: 10px 0;
 `;
 
 const Main = styled.div`
-  display: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 const NavBar = styled.div`
@@ -73,6 +79,7 @@ const NavInner = styled.div`
   flex-direction: row;
   align-items: center;
   flex-wrap: wrap;
+  gap: 3rem;
 `;
 
 const NavLeft = styled.div`
@@ -84,6 +91,7 @@ const MenuButton = styled.button`
   border: none;
   background: none;
   overflow: visable;
+  outline: none;
 `;
 
 const Image = styled.img`
@@ -91,12 +99,49 @@ const Image = styled.img`
   height: 20px;
   object-fit: contain;
   background: none;
+  cursor: pointer;
 `;
 const MainTitle = styled.a`
   font-size: 17px;
+  font-weight: bold;
+  color: inherit;
 `;
 
 const MenuSubTitle = styled.ul`
   display: flex;
+  gap: 3rem;
+`;
+
+const MenuContents = styled.a`
   font-size: 13px;
+  color: inherit;
+  padding: 10px 0;
+`;
+
+const AsideUl = styled.ul`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+`;
+
+const ReadingGlassesButton = styled.button`
+  border: none;
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+`;
+
+const SignupButton = styled.button`
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+`;
+
+const ServiceButton = styled.a`
+  border: 1px solid #e1e2e3;
+  border-radius: 15px;
+  font-size: 13px;
+  color: #666;
+  padding: 5px;
 `;
