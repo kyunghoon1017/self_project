@@ -60,7 +60,6 @@ const Wrapper = styled.div`
   width: 100%;
   position: fixed;
   border-bottom: 1px solid #dddd;
-  z-index: 100;
   padding: 10px 0;
 `;
 

@@ -5,9 +5,10 @@ import Nav from './components/Nav/Nav';
 const RoutesJs = () => {
   return (
     <BrowserRouter>
-      <Nav />
       <Routes>
-        <Route path="/" element={<Main />} />
+        <Route element={<Nav />}>
+          <Route path="/" element={<Main />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   );
